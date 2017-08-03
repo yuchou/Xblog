@@ -1,5 +1,5 @@
 # xblog
-##创建Postgresql数据库
+## 创建Postgresql数据库
 ```bash
 $ su - postgres
 $ psql
@@ -11,7 +11,7 @@ CREATE DATABASE
 $ grant all privileges on database blog to blog;
 GRANT
 ```
-##测试数据库连接
+## 测试数据库连接
 ```bash
 $ netstat -antp | grep 5432
 tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN      6975/postmaster     
