@@ -14,6 +14,6 @@ def detail(request, pk):
                                   extensions=[
                                       'markdown.extensions.extra',
                                       'markdown.extensions.codehilite',
-                                      'markdown.extensions.toc'
+                                      'markdown.extensions.toc',
                                   ])
     return render(request, 'blog/detail.html', context={'post': post})
