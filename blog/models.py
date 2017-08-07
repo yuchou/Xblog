@@ -9,12 +9,20 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = '类别'
+        verbose_name_plural = '类别'
+
 
 class Tag(models.Model):
     name = models.CharField(max_length=100, verbose_name='标签名称')
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = '标签'
+        verbose_name_plural = '标签'
 
 
 class Post(models.Model):
@@ -32,3 +40,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
+
+    class Meta:
+        verbose_name = '文章'
+        verbose_name_plural = '文章'
