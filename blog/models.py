@@ -34,12 +34,17 @@ class Post(models.Model):
     category = models.ForeignKey(Category, verbose_name='文章类别')
     tags = models.ManyToManyField(Tag, verbose_name='文章标签')
     author = models.ForeignKey(User, verbose_name='文章作者')
+    views = models.PositiveIntegerField(default=0, verbose_name='阅读数量')
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'pk': self.pk})
+
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])
 
     class Meta:
         verbose_name = '文章'
